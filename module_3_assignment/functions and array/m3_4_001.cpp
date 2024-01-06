@@ -1,50 +1,31 @@
 /*
-2. WAP of Addition, Subtraction, Multiplication and Division using Switch
-case.(Must Be Menu Driven)
+1. Write a program to find out the max number from given array using function
 */
 
 #include<stdio.h>
-float calculator();
-
+int largestvalue();  // function declaration
 
 int main(){
-	float ans;
-	ans = calculator();
-	printf("\n ans is %.2f", ans);
-}
-
-float calculator(){
-	float a,c,d;
 	int b;
-	printf("\n Enter first input : ");
-	scanf("%f",&a);
-	
-	printf("\n Enter second input : ");
-	scanf("%f",&c);
-	
-	printf("\n Enter 1 for sum \n Enter 2 for substraction \n Enter 3 for multiplication \n Enter 4 for division \n        ");
-	scanf(" %d",&b);
-	
-	switch(b){
-		case 1:{d=a+c;
-			break;
-		}
-		case 2:{d=a-c;
-			break;
-		}
-		case 3:{d=a*c;
-			break;
-		}
-		case 4:{d=a/c;
-			break;
-		}
-		default:{
-			printf("\n choise is wrong");
-			break;
-		}
-	
-	}
-	return d;
+	b=largestvalue();	// function calling
+	printf("\n Largest value is %d",b);
 }
 
+// function definition
+int largestvalue(){ 
+	int i,j,n[10],a=0;		// n[10] = array declration
+	
+	// array initialization
+	for(i=0;i<10;i++){
+		printf("\n Enter value(%d) : ",i+1);
+		scanf("%d",&n[i]);
+	}
+	// finding the max number
+	for(j=0;j<10;j++){
+		if(a<n[j]){
+			a=n[j];
+		}
+	}
+	return a;
 
+}
