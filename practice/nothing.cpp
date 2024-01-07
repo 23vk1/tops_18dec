@@ -1,10 +1,12 @@
-// smaller than erlier
+// all patterns in one with meneu driven
 #include<stdio.h>
 int a,w;
 char p;
 
 void pattern_menu();
 void pattern_choise();
+void print1();
+void print2();
 
 void square();
 void right_half_pyramid();
@@ -68,13 +70,22 @@ void pattern_choise(){
 	}
 }
 
+void print1(){
+	if(w==1){printf(" *");}
+	else if(w==2){printf(" %d",a);a++;}
+	else if(w==3){printf(" %c",p);p++;}
+}
+void print2(){
+	if(w==1){printf("  *");}
+	else if(w==2){(a<10)?(printf("  %d",a)):(printf(" %d",a));a++;}	
+	else if(w==3){printf("  %c",p);p++;}
+}
+
 void square(){
 	int i,j;
 	for(i=1;i<=10;i++){a=1;p='A';
 		for(j=1;j<=10;j++){
-			if(w==1){printf(" *");}
-			else if(w==2){printf(" %d",a);a++;}
-			else if(w==3){printf(" %c",p);p++;}
+			print1();
 		}
 		printf("\n");
 	}printf(" Square ");
@@ -84,9 +95,7 @@ void right_half_pyramid(){
 	int i,j;
 	for(i=1;i<=10;i++){a=1;p='A';
 		for(j=1;j<=i;j++){
-			if(w==1){printf(" *");}
-			else if(w==2){printf(" %d",a);a++;}
-			else if(w==3){printf(" %c",p);p++;}
+			print1();
 		}
 		printf("\n");
 	}
@@ -100,9 +109,7 @@ void left_half_pyramid(){
 			printf("  ");
 		}
 		for(k=1;k<=i;k++){
-			if(w==1){printf(" *");}
-			else if(w==2){printf(" %d",a);a++;}
-			else if(w==3){printf(" %c",p);p++;}
+			print1();
 		}
 		printf("\n");
 	}printf(" Left half pyramid");
@@ -115,9 +122,7 @@ void full_pyramid(){
 			printf("   ");
 		}
 		for(k=1;k<=(2*i)-1;k++){
-			if(w==1){printf("  *");}
-			else if(w==2){(a<10)?(printf("  %d",a)):(printf(" %d",a));a++;}	
-			else if(w==3){printf("  %c",p);p++;}
+			print2();
 		}printf("\n\n");
 	}printf(" Full pyramid");
 }
@@ -126,9 +131,7 @@ void inverted_right_half_pyramid(){
 	int i,j;
 	for(i=1;i<=10;i++){a=1;p='A';
 		for(j=10;j>=i;j--){
-			if(w==1){printf(" *");}
-			else if(w==2){printf(" %d",a);a++;}
-			else if(w==3){printf(" %c",p);p++;}
+			print1();
 		}printf("\n");
 	}printf(" Inverted right half pyramid");
 }
@@ -140,9 +143,7 @@ void inverted_left_half_pyramid(){
 			printf("  ");
 		}
 		for(k=10;k>=i;k--){
-			if(w==1){printf(" *");}
-			else if(w==2){printf(" %d",a);a++;}
-			else if(w==3){printf(" %c",p);p++;}
+			print1();
 		}
 		printf("\n");
 	}printf(" Inverted left half pyramid");
@@ -156,9 +157,7 @@ void inverted_full_pyramid(){
 			printf("   ");
 		}
 		for(k=0;k<2*(rows-i)-1;k++){
-			if(w==1){printf("  *");}
-			else if(w==2){(a<10)?(printf("  %d",a)):(printf(" %d",a));a++;}	
-			else if(w==3){printf("  %c",p);p++;}
+			print2();
 		}printf("\n\n");
 	}printf(" Inverted full pyramid");
 }
@@ -170,9 +169,7 @@ void rhombus(){
 			printf(" ");
 		}
 		for(k=1;k<=10;k++){
-			if(w==1){printf(" *");}
-			else if(w==2){printf(" %d",a);a++;}
-			else if(w==3){printf(" %c",p);p++;}
+			print1();
 		}printf("\n");
 	}printf(" Rhombus pattern");
 }
@@ -184,9 +181,7 @@ void diammond_pattern(){
 			printf("  ");
 		}
 		for(k=1;k<=star;k++){
-			if(w==1){printf(" *");}
-			else if(w==2){printf(" %d",a);a++;}
-			else if(w==3){printf(" %c",p);p++;}
+			print1();
 		}printf("\n");
 		if(i<5){
 			space--;
@@ -205,9 +200,7 @@ void hourglass_pattern(){
 			printf("   ");
 		}
 		for(k=1;k<=star;k++){
-			if(w==1){printf("  *");}
-			else if(w==2){(a<10)?(printf("  %d",a)):(printf(" %d",a));a++;}	
-			else if(w==3){printf("  %c",p);p++;}
+			print2();
 		}printf("\n\n");
 		if(i<=5){
 			space++;
@@ -224,9 +217,7 @@ void hollow_square_pattern(){
 	for(i=1;i<=10;i++){a=1;p='A';
 		for(j=1;j<=10;j++){
 			if(j==1 || i==1 || j==10 || i==10){
-				if(w==1){printf(" *");}
-				else if(w==2){printf(" %d",a);a++;}
-				else if(w==3){printf(" %c",p);p++;}
+				print1();
 			}else{
 				printf("  ");
 			}
@@ -242,9 +233,7 @@ void hollow_full_pyramid(){
 		}
 		for(k=1;k<=(2*i)-1;k++){
 			if(k==1 || k==(2*i)-1 || i==10){
-				if(w==1){printf("  *");}
-				else if(w==2){(a<10)?(printf("  %d",a)):(printf(" %d",a));a++;}	
-				else if(w==3){printf("  %c",p);p++;}	
+				print2();	
 			}else{
 				printf("   ");
 			}	
@@ -261,9 +250,7 @@ void hollow_inverted_full_pyramid(){
 		}
 		for(k=1;k<=2*(rows-i)-1;k++){
 			if(i==1 || k==1 || k==2*(rows-i)-1){
-				if(w==1){printf("  *");}
-				else if(w==2){(a<10)?(printf("  %d",a)):(printf(" %d",a));a++;}	
-				else if(w==3){printf("  %c",p);p++;}
+				print2();
 			}else{
 				printf("   ");
 			}
@@ -279,9 +266,7 @@ void hollow_diamond_pattern(){
 		}
 		for(k=1;k<=star;k++){
 			if(k==1 || k==star){
-				if(w==1){printf(" *");}
-				else if(w==2){printf(" %d",a);a++;}
-				else if(w==3){printf(" %c",p);p++;}
+				print1();
 			}else{
 				printf("  ");
 			}
@@ -305,9 +290,7 @@ void hollow_hourglass_pattern(){
 		}
 		for(k=1;k<=star;k++){
 			if(k==1 || i==1 || i==11 || k==star){
-				if(w==1){printf("  *");}
-				else if(w==2){(a<10)?(printf("  %d",a)):(printf(" %d",a));a++;}	
-				else if(w==3){printf("  %c",p);p++;}
+				print2();
 			}else{
 				printf("   ");
 			}
