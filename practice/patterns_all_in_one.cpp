@@ -1,6 +1,6 @@
 // all patterns in one with meneu driven
 #include<stdio.h>
-int a,w;
+int a,w,i,j,k;
 char p;
 
 void pattern_menu();
@@ -82,8 +82,8 @@ void print2(){
 }
 
 void square(){
-	int i,j;
-	for(i=1;i<=10;i++){a=1;p='A';
+	for(i=1;i<=10;i++){
+		a=1;p='A';
 		for(j=1;j<=10;j++){
 			print1();
 		}
@@ -92,8 +92,8 @@ void square(){
 }
 
 void right_half_pyramid(){
-	int i,j;
-	for(i=1;i<=10;i++){a=1;p='A';
+	for(i=1;i<=10;i++){
+		a=1;p='A';
 		for(j=1;j<=i;j++){
 			print1();
 		}
@@ -103,8 +103,8 @@ void right_half_pyramid(){
 }
 
 void left_half_pyramid(){
-	int i,j,k;
-	for(i=1;i<=10;i++){a=1;p='A';
+	for(i=1;i<=10;i++){
+		a=1;p='A';
 		for(j=1;j<=10-i;j++){
 			printf("  ");
 		}
@@ -116,8 +116,8 @@ void left_half_pyramid(){
 }
 
 void full_pyramid(){
-	int i,j,k;
-	for(i=1;i<=10;i++){a=1;p='A';
+	for(i=1;i<=10;i++){
+		a=1;p='A';
 		for(j=1;j<=10-i;j++){
 			printf("   ");
 		}
@@ -128,8 +128,8 @@ void full_pyramid(){
 }
 
 void inverted_right_half_pyramid(){
-	int i,j;
-	for(i=1;i<=10;i++){a=1;p='A';
+	for(i=1;i<=10;i++){
+		a=1;p='A';
 		for(j=10;j>=i;j--){
 			print1();
 		}printf("\n");
@@ -137,8 +137,8 @@ void inverted_right_half_pyramid(){
 }
 
 void inverted_left_half_pyramid(){
-	int i,j,k;
-	for(i=1;i<=10;i++){a=1;p='A';
+	for(i=1;i<=10;i++){
+		a=1;p='A';
 		for(j=1;j<=i;j++){
 			printf("  ");
 		}
@@ -151,8 +151,9 @@ void inverted_left_half_pyramid(){
 }
 
 void inverted_full_pyramid(){
-	int i,j,k,rows=10;
-	for(i=1;i<=rows;i++){a=1;p='A';
+	int rows=10;
+	for(i=1;i<=rows;i++){
+		a=1;p='A';
 		for(j=1;j<=i;j++){
 			printf("   ");
 		}
@@ -163,8 +164,8 @@ void inverted_full_pyramid(){
 }
 
 void rhombus(){
-	int i,j,k;
-	for(i=1;i<=10;i++){a=1;p='A';
+	for(i=1;i<=10;i++){
+		a=1;p='A';
 		for(j=1;j<=i;j++){
 			printf(" ");
 		}
@@ -175,8 +176,9 @@ void rhombus(){
 }
 
 void diammond_pattern(){
-	int i,j,k,space=5,star=1;
-	for(i=1;i<=10;i++){a=1;p='A';
+	int space=5,star=1;
+	for(i=1;i<=10;i++){
+		a=1;p='A';
 		for(j=1;j<=space;j++){
 			printf("  ");
 		}
@@ -194,8 +196,9 @@ void diammond_pattern(){
 }
 
 void hourglass_pattern(){
-	int i,j,k,space=1,star=11;
-	for(i=1;i<=11;i++){a=1;p='A';
+	int space=1,star=11;
+	for(i=1;i<=11;i++){
+		a=1;p='A';
 		for(j=1;j<=space;j++){
 			printf("   ");
 		}
@@ -213,8 +216,8 @@ void hourglass_pattern(){
 }
 
 void hollow_square_pattern(){
-	int i,j;
-	for(i=1;i<=10;i++){a=1;p='A';
+	for(i=1;i<=10;i++){
+		a=1;p='A';
 		for(j=1;j<=10;j++){
 			if(j==1 || i==1 || j==10 || i==10){
 				print1();
@@ -226,8 +229,8 @@ void hollow_square_pattern(){
 }
 
 void hollow_full_pyramid(){
-	int i,j,k;
-	for(i=1;i<=10;i++){a=1;p='A';
+	for(i=1;i<=10;i++){
+		a=1;p='A';
 		for(j=1;j<=10-i;j++){
 			printf("   ");
 		}
@@ -243,8 +246,9 @@ void hollow_full_pyramid(){
 }
 
 void hollow_inverted_full_pyramid(){
-	int i,j,k,rows=10;
-	for(i=1;i<=10;i++){a=1;p='A';
+	int rows=10;
+	for(i=1;i<=10;i++){
+		a=1;p='A';
 		for(j=1;j<=i;j++){
 			printf("   ");
 		}
@@ -259,8 +263,9 @@ void hollow_inverted_full_pyramid(){
 }
 
 void hollow_diamond_pattern(){
-	int i,j,k,space=5,star=1;
-	for(i=1;i<=11;i++){a=1;p='A';
+	int space=5,star=1;
+	for(i=1;i<=11;i++){
+		a=1;p='A';
 		for(j=1;j<=space;j++){
 			printf("  ");
 		}
@@ -283,8 +288,9 @@ void hollow_diamond_pattern(){
 }
 
 void hollow_hourglass_pattern(){
-	int i,j,k,space=1,star=11;
-	for(i=1;i<=11;i++){a=1;p='A';
+	int space=1,star=11;
+	for(i=1;i<=11;i++){
+		a=1;p='A';
 		for(j=1;j<=space;j++){
 			printf("   ");
 		}
@@ -306,7 +312,7 @@ void hollow_hourglass_pattern(){
 }
 
 void floyds_triangle(){
-	int i,j,a=1;
+	int a=1;
 	for(i=1;i<=10;i++){
 		for(j=1;j<=i;j++){
 			if(a<10){
@@ -320,7 +326,7 @@ void floyds_triangle(){
 }
 
 void pascals_triangle(){
-	int i,j,k,a,b,c=11, rows=5;
+	int a,b,c=11, rows=5;
 	for(i=1;i<=5;i++){
 		b=c;
 		for(j=5;j>=i;j--){
