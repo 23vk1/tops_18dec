@@ -10,14 +10,11 @@ void accending();
 void decending();
 
 int main(){
-	int a[5],q;
+	int q;
 	
 	for(i=0;i<5;i++){
 		printf(" Enter a[%d] : ",i);
-		scanf("%d",&a[i]);
-	}
-	for(i=0;i<5;i++){
-		c[i]=a[i];
+		scanf("%d",&c[i]);
 	}
 	
 	printf("\n 1). print in accending order \n 2). print in decending order\n      ");
