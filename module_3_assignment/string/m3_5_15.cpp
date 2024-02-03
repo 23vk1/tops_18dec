@@ -2,7 +2,7 @@
 15.Write a program in C to find the largest and smallest words in a string.
 */
 
-// work not cmpleted
+
 
 
 #include<stdio.h>

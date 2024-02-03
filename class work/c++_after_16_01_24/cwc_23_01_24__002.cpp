@@ -1,3 +1,9 @@
+/*
+class work
+23_01_24
+*/
+
+
 #include<iostream>
 #include<string>
 using namespace std;
