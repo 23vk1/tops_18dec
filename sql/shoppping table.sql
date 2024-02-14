@@ -124,3 +124,49 @@ values('vijay',1,23000,'online'),
 ('pilo',13,7999,'online');
 
 -- truncate table payment;
+
+use shopping;
+-- -- update command
+update customer set customer_address='bopal' where customer_id=3;
+update customer set customer_mobile='9879398793',customer_email='vishwadeep@gmail.com' where customer_id=3;
+
+-- -- delete command
+delete from payment where payment_id=13;		-- delete perticular row in table
+delete from payment				-- delete all data in table 
+
+-- -- select command
+select * from customer;		-- to retrive all data from customer table 
+select customer_name,customer_address from customer;		-- to retrive two perticular columns from customer table 
+select customer_name as Cname, customer_address as Caddress from customer;	-- to retrive two perticular column with change in title of that column
+select customer_name from customer where customer_address='somnath';	-- to retrive all customers having same or perticular address
+select * from ordertbl where total > 10000;		-- to retrive data for specific condition
+
+use shopping;
+
+select distinct customer_name from payment;		-- to retrive records without repetation
+select * from customer;			-- to retrive all data from table 
+
+select * from customer where customer_address='bopal';		-- to retrive perticular data 
+
+select * from ordertbl where total between 5000 and 10000;	-- record which have total between 5000 to 10000
+
+select customer_name,customer_id from customer where customer_id between 2 and 5;	-- record having customer id between 2 and 5
+
+select customer_name from customer where customer_name like 'v%';		-- name have first latter 'v'
+select customer_name from customer where customer_name like '_i%';		-- name have second letter 'i'
+select customer_name from customer where customer_name like '%j%';		-- name have latter 'j' anywhare in middle 
+select customer_name from customer where customer_name like '%y';		-- name have last latter 'y'
+
+select *
+from customer
+order by customer_name desc;	-- name of customer in dececnding order 
+
+select count(product_id),product_id
+from ordertbl
+group by product_id;		-- to count total order for perticular product
+
+select sum(product_price),category_id
+from product
+group by category_id;		-- to make sum of all same category product price 
+
+
